@@ -20,7 +20,9 @@
 .newPost{
     color: black;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border:none;
 }
+
 .left button{
     margin-top: 10%; 
     background: none;
@@ -34,6 +36,7 @@
     border-radius: .8rem;
     padding: 1rem 2rem;
     background-color: white;
+    outline: none;
 }
 .left button:hover{
     background-color: rgb(216, 214, 214);
@@ -54,11 +57,18 @@
 .blogCard{
     padding: 10px 0px 10px 0px;
 }
+.classes.appBar{
+    color: rgb(62, 182, 182);
+}
 .right{
     background-color: none;
     width: 17.5%;
     position: relative;
 }
+.dialogClass{
+    background-color: rgb(62, 182, 182);
+}
+
 @media screen and (max-width: 768px){
 .middle{
     padding: 2.5rem;
