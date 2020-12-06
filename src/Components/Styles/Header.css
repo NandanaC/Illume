@@ -9,21 +9,22 @@
     width: 100%;
     height: 70px;
     display: block;
-    background-color: #101010;
+    background-color: #18181a;
 }
 
 .inner_header{
-    width: 1200px;
+    width: 1500px;
     height: 70px;
-    display: block;
+    display: inline-block;
     margin: 0 auto;
 }
 
 .logo_container_header{
-    height: 70px;
+    height: 50px;
     display: table;
     float: left;
     align-items: center;
+    margin-top: 7px;
 }
 
 .logo_container_header h1{
@@ -35,18 +36,17 @@
     font-size: 32px;
     font-weight: 200;
     text-align: center;
-    /*padding-bottom: 38px;*/
     cursor: pointer;
 }
 
 .navigation{
     height: 10vh;
-    width:50%;
+    width:80%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    margin: auto;
-    padding-left: 200px;
+    padding-left: 400px;
+    float: right;
 }
 .categories{
     position: relative;
@@ -57,7 +57,7 @@
 .navigation button,
 .home,
 .about,
-.myblog {
+.signLog{
     background: none;
     border: none;
     color: white;
@@ -65,16 +65,17 @@
     font-family: "Verdana";
     font-size:  16px;
     cursor: pointer;
+    outline: none;
 }
 
 .navigation button:hover .home,
 .navigation button:hover .about,
-.navigation button:hover .myblog {
+.navigation button:hover .signLog {
     color: rgb(150, 144, 144);
     font-weight: 400;
 }
 .navigation button{
-    width: 100%;
+    width: 100px;
     height: 70px;
 }
 .categories .catButton{
@@ -87,10 +88,8 @@
 }
 
 .logo img{
-    width: 5vw;
-    height: 65px;
-    /*margin-top: -15px;*/
-    /*margin-right: -25px;*/
+    width: 4vw;
+    height: 55px;
 }
 .menu{
     display: none;
@@ -120,4 +119,12 @@
     background-color: #fff;
     color: rgb(150, 144, 144);
     font-weight: 400;
+}
+
+#signBtn{
+    position: relative;
+    left: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
