@@ -4,28 +4,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-/* const logIn = document.getElementById('logIn');
-const logOut = document.getElementById('logOut');
-const signUp = document.getElementById('signUp');
-const txtEmail = document.getElementById('txtEmail');
-const txtPass = document.getElementById('txtPass'); */
-
-/* async function logInWithEmailAndPassword(email, pass) {
-  console.log('Button clicked!');
-  const response = await fetch('http://localhost:9000/firebaseAuth',
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ email: email, pass: pass }),
-    });
-  const body = await response.text();
-  console.log(body);
-}*/
-
-//logIn.addEventListener("click", console.log('Something!'));
-
 ReactDOM.render(
   <React.StrictMode>
     <App />
