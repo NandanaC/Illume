@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var firebase = require('firebase');
+var fs = require('fs');
 
 const config = {
     apiKey: "AIzaSyAX1jk7VgN0JEluxw9vNb7Q9Wl7Nr_UROo",
@@ -16,15 +17,24 @@ const config = {
 firebase.default.initializeApp(config);
 const auth = firebase.auth();
 
-auth.onAuthStateChanged(function(firebaseUser){
-    if(firebaseUser){
+auth.onAuthStateChanged(function (firebaseUser) {
+    if (firebaseUser) {
         console.log('Signed in!');
+        fs.writeFileSync("./routes/userData.txt", auth.currentUser.uid,
+            function (err) {
+                if (err) throw err;
+                console.log("File written successfully!");
+            }
+        );
     }
-    else{
+    else {
+        fs.writeFileSync("./routes/userData.txt", '', function (err) {
+            if (err) throw err;
+            console.log("File contents cleared");
+        })
         console.log('Signed out!');
     }
 });
-
 
 async function validateLogIn(email, pass) {
     var valid = true;
