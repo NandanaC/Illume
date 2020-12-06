@@ -15,7 +15,7 @@ function Header(){
                     <div className="navigation">
                         <button><a href="#" className="home">Home</a></button>
                         <button><a href="#" className="about">About</a></button>
-                        <button><a href="#" className="myblog">My Blogs</a></button>
+                        
                         <div className="categories">
                             <button className="catButton">Categories</button>
                             <div className="menu" >
@@ -25,9 +25,10 @@ function Header(){
                                 <a href="#">Cat4</a>
                             </div>
                         </div>
+                        <button id="signBtn"><a href="#" className="signLog">Log In</a></button>
                     </div>
-            </div>
 
+            </div>
         </div>
     )
 }

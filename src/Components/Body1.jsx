@@ -3,14 +3,7 @@ import "./Styles/Body1.css";
 import Card from "./Cards1";
 import NewBlog from './NewBlog';
 import Dialog from '@material-ui/core/Dialog';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
 import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListItem from '@material-ui/core/ListItem';
-import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -48,9 +41,6 @@ export default function FullScreenDialog() {
       setOpen(false);
     };
 
-{/*function Body(){*/}
-    /*const [open,setOpen] = useState(false);
-    const classes = useStyles();*/
     return(
         <div className="body" style={open?{filter:'blur(2px)'}:{filter:'none'}}>
             <div className="left">
@@ -60,41 +50,27 @@ export default function FullScreenDialog() {
                 <div className="blogCard"> <Card /></div>
                 <div className="blogCard"> <Card /></div>
                 <div className="blogCard"> <Card /></div>
-               
+                <div className="loadMore">
+                    <a href="#"><button type='button'>Load More</button></a>
+                </div>
+
             </div>
             <div className="right">
 
             </div>
-                {/*<Dialog 
-                    open={open} 
-                    onClose={() => {setOpen(false)}}
-                    scroll='body'
-                    classes={{ paper : classes.dialogPaper}}
-                    aria-labelledby="newblog"
-                    aria-describedby="new blog page description"
-                    modal={true}>
-                     <DialogTitle id="dialog-title">New Blog Page</DialogTitle>}
-                    <DialogContentText
-                        id="scroll-dialog-description"
-                        tabIndex={-1}>
-                        <div>
-                            <NewBlog />
-                         </div>
-                    </DialogContentText>
-                </Dialog>*/}
                 <Dialog className= "dialogClass" fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
-            <AppBar className={classes.appBar} style={{ backgroundColor: 'rgb(62, 182, 182)'}}>
-                <Toolbar>
-            <IconButton edge="start" color="inherit" onClick={handleClose} aria-label="close">
-              <CloseIcon />
-            </IconButton>
-            <Typography variant="h6" className={classes.title}>
-              New Blog
-            </Typography>
-          </Toolbar>
-        </AppBar>
-        <NewBlog />
-        </Dialog>
+                    <AppBar className={classes.appBar} style={{ backgroundColor: '#18181a'}}>
+                        <Toolbar>
+                            <IconButton edge="start" color="inherit" onClick={handleClose} aria-label="close">
+                                <CloseIcon />
+                            </IconButton>
+                            <Typography variant="h6" className={classes.title}>
+                                New Blog
+                            </Typography>
+                        </Toolbar>
+                    </AppBar>
+                    <NewBlog />
+                </Dialog>
             </div>
     );
 }
