@@ -8,23 +8,23 @@ import Form from "./Components/DummyFb";
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      func: function () { }
-    };
+    this.state = { data: '' };
   }
 
   callAPI() {
-    fetch('http://localhost:9000/testAPI')
+    fetch('http://localhost:9000/fetchData')
       .then(res => res.text())
+      .then(res => this.setState({ data: res }));
   }
 
   componentDidMount() {
-    //this.callAPI();
+    this.callAPI();
   }
 
   render() {
     return (
       <div className="App">
+        <div > The data is {this.state.data} </div>
         <Form />
         <Header />
         <Body />

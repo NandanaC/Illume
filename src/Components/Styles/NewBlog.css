@@ -1,0 +1,173 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.newBlog{
+    width: 75vw;
+    height: auto;
+    /*background-color: rgb(62, 182, 182);*/
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 9%;
+    left: 12.5%;
+    justify-content: center;
+    align-items: center;
+    border-radius: .8rem;
+    box-shadow: 0 0.8rem 0.8rem rgba(0, 0,0,.2);
+}
+
+/*table{
+    width:1000px;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    display: block;
+    border-radius: 2rem;
+    padding-left: 100px;
+    box-shadow: 0 0.5rem 0.5rem rgba(0, 0,0,.2);
+    margin-top: 4%;
+    margin-bottom: 4%;
+    font-family: 'Calibri';
+}*/
+
+#photo{
+    background-color: white;
+}
+
+/*td,th,tr{
+    border: none;
+    text-align: left;
+    padding: 20px;
+}*/
+
+input{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: none;
+    /*border: 2px solid black;*/
+    padding: 12px 20px;
+    border: none;
+    margin-right: 50px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    text-align: left;
+    box-shadow: 0 0.5rem 0.5rem rgba(0, 0,0,.2);
+    border-radius: .8rem;
+    outline: none;
+}
+
+textarea{
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    resize: none;
+    padding: 12px;
+    border-radius: .8rem;
+    border: none;
+    box-shadow: 0 0.5rem 0.5rem rgba(0, 0,0,.2);
+    outline: none;
+}
+
+label{
+    position: absolute;
+    font-family: Calibri;
+    font-size: 18px;
+    pointer-events: none;
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder{
+    color: transparent;
+}
+input::placeholder,
+textarea::placeholder{
+    color: #222;
+    transition: color 0.2s ease-out;
+}
+input:focus + label,
+input:valid + label{
+    top: 0;
+    left: 10px;
+    font-size: 18px;
+    color: yellow;
+    padding: 3px;
+    background: white;
+}
+
+.urbutton{
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 50px;
+}
+.urbutton button{
+    background: none;
+    border: none;
+    color: black;
+    text-decoration: none;
+    font-family: "Verdana";
+    font-size:  16px;
+    cursor: pointer;
+    box-shadow: 0 0.5rem 0.5rem rgba(0, 0,0,.2);
+    border-radius: .8rem;
+    padding: .8rem 2rem;
+    background-color: white;
+    outline: none;
+     
+}
+.urbutton >td:last-child{
+    text-align: center;
+    /*padding: 0 20px 20px 10px;*/
+    /*transform: translateX(500px);*/
+}
+.urbutton >td:first-child{
+    text-align: center;
+    /*transform: translateX(50px);*/
+}
+.urbutton button:hover{
+    /*background-color: rgb(216, 214, 214);*/
+    background-color: rgb(62, 182, 182);
+    font-weight: 400;
+    color: white;
+}
+
+.classes.root{
+    display: flex;
+}
+
+.title{
+    margin-top: 10%;
+}
+.title,
+
+.shortDescription,
+.content{
+    margin-bottom: 2%;
+    /*background-color: whitesmoke;
+    border-radius: .8rem;
+    box-shadow: 0 0.5rem 0.5rem rgba(0, 0,0,.2);*/
+}
+
+.classes.root{
+    width: 100vw;
+    height: auto;
+}
+textarea:focus,
+textfield:focus{
+    outline: none;
+}
+#photo{
+    width: 20vw;
+}
+
+#shortDes,
+#Content{
+    overflow-y: scroll;
+    border-color: rgb(62, 182, 182);
+    padding-left: 8px;
+}

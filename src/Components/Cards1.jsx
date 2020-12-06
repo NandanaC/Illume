@@ -1,7 +1,7 @@
 import React from "react";
 import "./Styles/Cards1.css"
 
-function Cards() {
+function Cards(props) {
     return (
         <div className="blogPost">
             <div className="blogImg">
@@ -12,7 +12,7 @@ function Cards() {
                     <span>Wednesday </span>
                     <span>December 2 2020</span>
                 </div>
-                <h1 className="blogTitle">Title</h1>
+                <h1 className="blogTitle">Title {props.text}</h1>
                 <p className="blogText">
                     Blog text here blog text here blog text here Blog text here blog text here blog text here
                         </p>
