@@ -56,7 +56,6 @@
 
 .navigation button,
 .home,
-.about,
 .myblog {
     background: none;
     border: none;
@@ -74,7 +73,7 @@
     font-weight: 400;
 }
 .navigation button{
-    width: 100%;
+    width: 80%;
     height: 70px;
 }
 .categories .catButton{
@@ -84,6 +83,11 @@
     background-color: white;
     color: rgb(179, 172, 172);
     font-weight: 400;
+}
+
+#logOut {
+    margin-left: 80px;
+    width: max-content;
 }
 
 .logo img{

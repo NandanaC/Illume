@@ -1,0 +1,256 @@
+.signIn{
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+label{
+  margin-left: 10px;
+}
+
+.Header{
+  width: 100%;
+  height: 10px;
+}
+
+input[type=email], input[type=password],input[type=text] {
+  width: 95%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  margin-left: 10px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  margin-left: 10px;
+  border: none;
+  cursor: pointer;
+  width: 95%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+
+.authenticate{
+  margin-top: 40px;
+  margin-bottom: 20px;
+  height: 720px;
+  width: 30%;
+  position: absolute;
+  right: 40px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.authenticate:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.title{
+  margin-top: 40px;
+  position: absolute;
+  left: 0px;
+  width: 65%;
+  height: 720px;
+  /* margin-left: 300px; */
+ 
+  /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s; */
+  
+}
+
+.head{
+  padding-top: 20px;
+  font-size: 50px;
+  text-align: center;
+  font-family : Helvetica;
+  font-weight: bold;
+}
+
+.headImage{
+  margin-left: 10px;
+  margin-top: 15px;
+}
+
+.headPara{
+  margin-top: 18px;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 35px;
+}
+
+.design{
+  margin-top: 800px;
+  position: absolute;
+  left: 0px;
+  width: 55%;
+  height: 300px;
+  padding-top: 150px;
+  /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s; */
+  margin-bottom: 20px;
+}
+
+.designTitle{
+  text-align: center;
+  font-weight: bold;
+  font-size: 60px;
+}
+
+.designContent{
+  margin-top: 20px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.designImage{
+  margin-top: 850px;
+  height: 400px;
+  width: 40%;
+  position: absolute;
+  right: 40px;
+  background-color: aqua;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.designImage:hover {
+  box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+}
+
+.ui{
+  margin-top: 1300px;
+  position: absolute;
+  right: 0px;
+  width: 55%;
+  height: 300px;
+  padding-top: 150px;
+  /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s; */
+  margin-bottom: 20px;
+}
+
+.soc{
+  margin-top: 2300px;
+  position: absolute;
+  right: 0px;
+  width: 55%;
+  height: 300px;
+  padding-top: 150px;
+  /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s; */
+  margin-bottom: 20px;
+}
+
+.uiTitle{
+  text-align: center;
+  font-weight: bold;
+  font-size: 60px;
+}
+
+.uiContent{
+  margin-top: 20px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.socTitle{
+  text-align: center;
+  font-weight: bold;
+  font-size: 60px;
+}
+
+.socContent{
+  margin-top: 20px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.uiImage{
+  margin-top: 1350px;
+  height: 400px;
+  width: 40%;
+  position: absolute;
+  left: 40px;
+  background-color: aqua;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.socImage{
+  margin-top: 2350px;
+  height: 400px;
+  width: 40%;
+  position: absolute;
+  left: 40px;
+  background-color: aqua;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.uiImage:hover {
+  box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+}
+
+
+.socImage:hover {
+  box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+}
+.sec{
+  margin-top: 1800px;
+  position: absolute;
+  left: 0px;
+  width: 55%;
+  height: 300px;
+  padding-top: 150px;
+  /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s; */
+  margin-bottom: 20px;
+}
+
+.secTitle{
+  text-align: center;
+  font-weight: bold;
+  font-size: 60px;
+}
+
+.secContent{
+  margin-top: 20px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.secImage{
+  margin-top: 1850px;
+  height: 400px;
+  width: 40%;
+  position: absolute;
+  right: 40px;
+  background-color: aqua;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.secImage:hover {
+  box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+}
+
+.quotes{
+  margin-top: 2900px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 50px;
+  font-family: cursive;
+}
