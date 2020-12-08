@@ -43,7 +43,7 @@ async function validateLogIn(email, pass) {
         .catch((error) => {
             var errMessage = error.message;
             console.log('ERR-MSG: ' + errMessage);
-            if (error) valid = false;
+            if (error) valid = errMessage;
         });
     return valid;
 }
@@ -55,7 +55,7 @@ async function signUp(email, pass) {
         .catch((error) => {
             var errMessage = error.message;
             console.log('ERR-MSG: ' + errMessage);
-            if (error) success = false;
+            if (error) success = errMessage;
         });
     return success;
 }
@@ -75,15 +75,15 @@ async function logOut() {
 app.post('/logIn', async function (req, res) {
     var validate = await validateLogIn(req.body.email, req.body.pass);
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-    if (validate) res.send('Log In Successfull! :)');
-    else res.send('Log In Unsuccessfull :( ');
+    if (String(validate) === 'true') res.send(true);
+    else res.send(validate);
 });
 
 app.post('/signUp', async function (req, res) {
     var success = await signUp(req.body.email, req.body.pass);
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-    if (success) res.send('Sign Up Successfull! :)');
-    else res.send('Sign Up Unsuccessfull :( ');
+    if (String(success) === 'true') res.send(true);
+    else res.send(success);
 });
 
 app.post('/logOut', async function (req, res) {

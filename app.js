@@ -24,10 +24,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/fetchData', fetchDataRouter);
 app.use(cors());
 app.use('/firebaseAuth', sendReqRouter);
 app.use('/mongoData', updateDataRouter);
+app.use('/fetchData', fetchDataRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

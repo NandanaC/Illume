@@ -23,15 +23,33 @@ async function updateDatabase(blogid, title, desc, content, category, user_id) {
     });
 }
 
+function generateBlogId() {
+    const dayDict = { 0: 'Sunday', 1: 'Monday', 2: 'Tuesday', 3: 'Wednesday', 4: 'Thrusday', 5: 'Friday', 6: 'Saturday' }
+    const monthDict = { 0: 'Jan', 1: 'Feb', 11: 'December' }
+    const dateObj = new Date();
+    const day = '' + dayDict[dateObj.getDay()];
+    const month = '' + monthDict[dateObj.getMonth()];
+    const year = '' + dateObj.getFullYear();
+    var date = '' + dateObj.getDate();
+    date = date.length < 2 ? '0' + date : date;
+    var hr = '' + dateObj.getHours();
+    hr = hr.length < 2 ? '0' + hr : hr;
+    var min = '' + dateObj.getMinutes();
+    min = min.length < 2 ? '0' + min : min;
+    const time = hr + ':' + min;
+    var blogId = day.slice(0, 3) + month.slice(0, 3) + year + date + time;
+    return blogId;
+}
+
 app.post('/', async function (req, res, next) {
-    const blogId = 1;
+    const blogId = generateBlogId();
     const title = req.body.title;
     const desc = req.body.desc;
     const content = req.body.content;
-    const category = 'new';
+    const category = req.body.category;
     const userId = fs.readFileSync("./routes/userData.txt");
 
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000/new-blog')
     if (userId == '')
         res.send('User not logged in...Unable to update database');
     else {
@@ -39,6 +57,5 @@ app.post('/', async function (req, res, next) {
         res.send('Successfully updated Database!!');
     }
 });
-
 
 module.exports = app;
