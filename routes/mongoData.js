@@ -1,6 +1,5 @@
 var express = require('express');
 var app = express();
-var fs = require('fs');
 
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost:27017/";
@@ -47,7 +46,7 @@ app.post('/', async function (req, res, next) {
     const desc = req.body.desc;
     const content = req.body.content;
     const category = req.body.category;
-    const userId = fs.readFileSync("./routes/userData.txt");
+    const userId = req.body.uid;
 
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000/new-blog')
     if (userId == '')
