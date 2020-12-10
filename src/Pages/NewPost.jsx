@@ -2,21 +2,20 @@ import React from "react";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import NewBlog from "../Components/NewBlog";
+import user from '../user';
 
-class NewPost extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+function NewPost() {
 
-    render() {
-        return (
-            <div>
-                <Header />
-                <NewBlog />
-                <Footer />
-            </div>
-        )
-    }
+    var userData = user.userDetails;
+
+    return (
+        <div>
+            <Header />
+            <NewBlog user={userData} />
+            <Footer />
+        </div>
+    )
 }
+
 
 export default NewPost;

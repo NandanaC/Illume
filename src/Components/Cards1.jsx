@@ -29,7 +29,7 @@ function Cards(props) {
     function readMore() {
         history.push({
             pathname: '/blog',
-            search: '?query = ' + blog.BlogID,
+            search: '?query=' + blog.BlogID,
             state: { matter: blog }
         })
     }

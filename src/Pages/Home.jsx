@@ -2,21 +2,18 @@ import Header from '../Components/Header';
 import Footer from "../Components/Footer";
 import React from "react";
 import Body from "../Components/Body1";
+import { useLocation } from "react-router-dom";
+import user from '../user';
 
-class Home extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+function Home() {
+    return (
+        <div>
+            <Header />
+            <Body user={user.userDetails} />
+            <Footer />
+        </div>
+    )
 
-    render() {
-        return (
-            <div>
-                <Header />
-                <Body />
-                <Footer />
-            </div>
-        )
-    }
 }
 
 export default Home;

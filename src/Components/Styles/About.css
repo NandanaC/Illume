@@ -23,7 +23,7 @@ input[type=email], input[type=password],input[type=text] {
   box-sizing: border-box;
 }
 
-button {
+#login, #submit {
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
@@ -34,7 +34,11 @@ button {
   width: 95%;
 }
 
-button:hover {
+#login:hover {
+  opacity: 0.8;
+}
+
+#submit:hover {
   opacity: 0.8;
 }
 
@@ -54,7 +58,7 @@ button:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-.title{
+.about_title{
   margin-top: 40px;
   position: absolute;
   left: 0px;

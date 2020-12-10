@@ -3,7 +3,9 @@ import "./Styles/Body1.css";
 import Card from "./Cards1";
 import history from './history';
 
-function Body() {
+
+function Body(props) {
+    console.log(props.user);
     const [data, setData] = useState([]);
 
     async function fetchMongoData() {
@@ -19,7 +21,7 @@ function Body() {
     return (
         <div className="body">
             <div className="left">
-                <a className="newPost"><button type='button' onClick={() => { history.push('/new-blog') }}>New Post</button></a>
+                <a className="newPost"><button type='button' onClick={() => { history.push({ pathname: '/new-blog', state: { user: props.user } }) }}>New Post</button></a>
             </div>
             <div className="middle">
                 {data.map(item =>

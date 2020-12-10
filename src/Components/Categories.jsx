@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import "./Styles/Categories.css";
 import Card from "./Cards1";
 import history from './history';
+import user from '../user';
 
 function Category(props) {
 
     const [categoryData, setCatData] = useState([]);
     var catValueDict = { 'ml': 10, 'cc': 20, 'bd': 30, 'wd': 40 };
+    var userData = user.userDetails;
 
     async function fetchMongoDataOfCategory(cat) {
         await fetch('http://localhost:9000/fetchData/category',
@@ -28,7 +30,7 @@ function Category(props) {
     return (
         <div className="body">
             <div className="left">
-                <a className="newPost"><button type='button' onClick={() => { history.push('/new-blog') }}>New Post</button></a>
+                <a className="newPost"><button type='button' onClick={() => { history.push({ pathname: '/new-blog', state: { user: userData } }) }}>New Post</button></a>
             </div>
             <div className="middle">
                 {categoryData.map(item =>

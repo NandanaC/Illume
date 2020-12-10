@@ -7,16 +7,18 @@ import Home from '../Pages/Home';
 import NewBlog from "../Pages/NewPost";
 import Blog from "../Pages/Blog";
 import Category from "../Pages/Category";
+import Profile from "../Pages/MyBlogs";
 
 class Routes extends Component {
     render() {
         return (
-            <Router history={history}>
+            <Router history={history} >
                 <Switch>
                     <Route path="/" component={About} exact />
                     <Route path="/home" component={Home} />
                     <Route path="/new-blog" component={NewBlog} />
                     <Route path="/blog" component={Blog} />
+                    <Route path="/user" component={Profile} />
                     <Route path="/categories/ml" component={Category} />
                     <Route path="/categories/cc" component={Category} />
                     <Route path="/categories/bd" component={Category} />

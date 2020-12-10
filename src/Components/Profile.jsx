@@ -15,118 +15,48 @@ import Drawer from '@material-ui/core/Drawer';
 import Avatar from '@material-ui/core/Avatar';
 import { makeStyles } from '@material-ui/core/styles';
 import MenuTwoToneIcon from '@material-ui/icons/MenuTwoTone';
+import Card from './Cards1';
+import user from '../user';
 
-function Profile() {
+function Profile(props) {
     const [openDelDialog, setOpenDelDialog] = useState(false);
     const [openDraw, setOpenDraw] = useState(false);
-    const classes = makeStyles();
 
+    const classes = makeStyles();
+    var myBlogs = props.myblogs;
+    var userData = user.userDetails;
     return (
         <div>
-            <Header />
-            <div className="drawer">
-                <Button onClick={() => setOpenDraw(true)} id="menuIcon"><MenuTwoToneIcon /></Button>
-                <Drawer anchor='left' open={openDraw} onClose={() => setOpenDraw(false)} >
-                    <div className="drawDiv">
-                        <div className={classes.root} id="avatarId">
-                            <Avatar className={classes.teal} id="avatarIcon"><img src='./default-user-image.png' alt='user image' id="avatarImage"></img></Avatar>
-                        </div>
-                        <div className="drawName">
-                            <span id="drawName">UserName</span>
-                        </div>
-                        <div className="drawEmail">
-                            {/*<i id="EmailIcon"><EmailIcon style={{color : 'rgb(62, 182, 182)'}}/></i>*/}
-                            <span id="drawEmail">username@gmail.com</span>
-                        </div>
-                    </div>
-                </Drawer>
-            </div>
-            <div className="profileContainer">
-                <div className="profileCard">
-                    <div className="card">
-                        <img src='./website.jpg' alt='image'></img>
-                        <div className="cardPanel">
-                            <span className="cardDate">
-                                7th December, 2020
-                            </span>
-                            <p id="shortDesc">
-                                Have you ever said words to the effect of If only I knew then what I know now?
-                                You’re not the first person to express such thoughts, and you certainly won’t be the last.
-                            </p>
-                            <span className="breaker"></span>
-                            <h3 id="heading">
-                                Life Lessons Learned in My 40’s That I Wish I Could Tell My 20-Year Old Self
-                            </h3>
-                            <a href='#' id="EditIcon" ><EditIcon style={{ color: 'rgb(62, 182, 182)' }} /></a>
-                            <a id="DeleteIcon" onClick={() => { setOpenDelDialog(true) }}><DeleteIcon style={{ color: 'rgb(62, 182, 182)' }} /></a>
-                            <a href='#' id="ArrowRightAltIcon"><ArrowRightAltIcon style={{ color: 'rgb(62, 182, 182)' }} /></a>
-                        </div>
-                    </div>
-
-                    <div className="card">
-                        <img src='./website.jpg' alt='image'></img>
-                        <div className="cardPanel">
-                            <span className="cardDate">
-                                7th December, 2020
-                            </span>
-                            <p id="shortDesc">
-                                Have you ever said words to the effect of If only I knew then what I know now?
-                                You’re not the first person to express such thoughts, and you certainly won’t be the last.
-                            </p>
-                            <span className="breaker"></span>
-                            <h3 id="heading">
-                                Life Lessons Learned in My 40’s That I Wish I Could Tell My 20-Year Old Self
-                            </h3>
-                            <a href='#' id="EditIcon" ><EditIcon style={{ color: 'rgb(62, 182, 182)' }} /></a>
-                            <a id="DeleteIcon" onClick={() => { setOpenDelDialog(true) }}><DeleteIcon style={{ color: 'rgb(62, 182, 182)' }} /></a>
-                            <a href='#' id="ArrowRightAltIcon"><ArrowRightAltIcon style={{ color: 'rgb(62, 182, 182)' }} /></a>
-
-                        </div>
-                    </div>
-
-                    <div className="card">
-                        <img src='./website.jpg' alt='image'></img>
-                        <div className="cardPanel">
-                            <span className="cardDate">
-                                7th December, 2020
-                            </span>
-                            <p id="shortDesc">
-                                Have you ever said words to the effect of If only I knew then what I know now?
-                                You’re not the first person to express such thoughts, and you certainly won’t be the last.
-                            </p>
-                            <span className="breaker"></span>
-                            <h3 id="heading">
-                                Life Lessons Learned in My 40’s That I Wish I Could Tell My 20-Year Old Self
-                            </h3 >
-                            <a href='#' id="EditIcon" ><EditIcon style={{ color: 'rgb(62, 182, 182)' }} /></a>
-                            <a id="DeleteIcon" onClick={() => { setOpenDelDialog(true) }}><DeleteIcon style={{ color: 'rgb(62, 182, 182)' }} /></a>
-                            <a href='#' id="ArrowRightAltIcon"><ArrowRightAltIcon style={{ color: 'rgb(62, 182, 182)' }} /></a>
-                        </div>
+            <div className="body">
+                <div className="left">
+                    <div className="drawer">
+                        <Button onClick={() => setOpenDraw(true)} id="menuIcon"><MenuTwoToneIcon /></Button>
+                        <Drawer anchor='left' open={openDraw} onClose={() => setOpenDraw(false)} >
+                            <div className="drawDiv">
+                                <div className={classes.root} id="avatarId">
+                                    <Avatar className={classes.teal} id="avatarIcon"><img src='./default-user-image.png' alt='user image' id="avatarImage"></img></Avatar>
+                                </div>
+                                <div className="drawName">
+                                    <span id="drawName"> UserName </span>
+                                </div>
+                                <div className="drawEmail">
+                                    {/*<i id="EmailIcon"><EmailIcon style={{color : 'rgb(62, 182, 182)'}}/></i>*/}
+                                    <span id="drawEmail"> {userData.email} </span>
+                                </div>
+                            </div>
+                        </Drawer>
                     </div>
                 </div>
-
-                <a href="#!" className="allbtn">View all</a>
-
-                <Dialog onClose={() => setOpenDelDialog(false)} open={openDelDialog} disableBackdropClick='true' disableEscapeKeyDown='true'>
-                    <DialogTitle id="delConfirm">
-                        Delete
-                        </DialogTitle>
-                    <DialogContent>
-                        <Typography gutterBottom variant="body1">Are you sure you want to delete this post?</Typography>
-                        <Typography gutterBottom> </Typography>
-                    </DialogContent>
-                    <DialogActions>
-                        <a><Button autoFocus color="primary" onClick={() => setOpenDelDialog(false)}>
-                            Cancel
-                            </Button></a>
-                        <a href="#"><Button autoFocus color="primary">
-                            Yes
-                            </Button></a>
-
-                    </DialogActions>
-                </Dialog>
+                <div className="middle">
+                    {myBlogs.map(item =>
+                        (<div className="card" key={item.BlogID}>
+                            <Card key={item.BlogID} id={item.BlogID} title={item.title} desc={item.desc} day={item.BlogID.slice(0, 3)}
+                                month={item.BlogID.slice(3, 6)} year={item.BlogID.slice(6, 10)} date={item.BlogID.slice(10, 12)} />
+                        </div>))}
+                </div>
+                <div className="right">
+                </div>
             </div>
-            <Footer />
         </div>
     )
 }

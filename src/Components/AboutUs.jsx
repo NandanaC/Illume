@@ -7,6 +7,7 @@ import social from './Images/social.png';
 import './Styles/About.css';
 
 import history from './history';
+import user from '../user';
 
 class AboutUs extends React.Component {
     constructor(props) {
@@ -14,7 +15,7 @@ class AboutUs extends React.Component {
 
         this.logInWithEmailAndPassword = this.logInWithEmailAndPassword.bind(this);
         this.signUpWithEmailAndPassword = this.signUpWithEmailAndPassword.bind(this);
-        this.state = { txtEmail: '', txtPass: '' }
+        this.state = { txtEmail: '', txtPass: '', user: {} };
     }
 
     async logInWithEmailAndPassword(email, pass) {
@@ -26,9 +27,9 @@ class AboutUs extends React.Component {
                 },
                 body: JSON.stringify({ email: email, pass: pass }),
             });
-        const body = await response.text();
-        if (String(body) !== 'true') { alert(body); return false }
-        else { console.log('Logged in successfully!'); return true; }
+        const body = await response.json();
+        if (String(body['bool']) !== 'true') { alert(body['bool']); this.setState({ user: null }); return false }
+        else { console.log('Logged in successfully!'); this.setState({ user: body['user'] }); return true; }
     }
 
     async signUpWithEmailAndPassword(email, pass) {
@@ -40,21 +41,27 @@ class AboutUs extends React.Component {
                 },
                 body: JSON.stringify({ email: email, pass: pass }),
             });
-        const body = await response.text();
-        if (String(body) !== 'true') { alert(body); return false; }
-        else { console.log('Signed up successfully!'); return true; }
+        const body = await response.json();
+        if (String(body['bool']) !== 'true') { alert(body['bool']); this.setState({ user: null }); return false; }
+        else { console.log('Signed up successfully!'); this.setState({ user: body['user'] }); return true; }
     }
 
     async onLogIn(event) {
         event.preventDefault();
-        if (await this.logInWithEmailAndPassword(this.state.txtEmail, this.state.txtPass))
-            setTimeout(history.push({ pathname: '/home' }), 1500);
+        if (await this.logInWithEmailAndPassword(this.state.txtEmail, this.state.txtPass)) {
+            user.userDetails = this.state.user;
+            setTimeout(history.push({ pathname: '/home', state: { user: this.state.user } }), 1500);
+        }
+
     }
 
     async onSignUp(event) {
         event.preventDefault();
-        if (await this.signUpWithEmailAndPassword(this.state.txtEmail, this.state.txtPass))
-            setTimeout(history.push({ pathname: '/home' }), 1500);
+        if (await this.signUpWithEmailAndPassword(this.state.txtEmail, this.state.txtPass)) {
+            user.userDetails = this.state.user;
+            setTimeout(history.push({ pathname: '/home', state: { user: this.state.user } }), 1500);
+        }
+
     }
 
     render() {
@@ -62,7 +69,7 @@ class AboutUs extends React.Component {
             <div className="App">
                 <div className="Header">
                 </div>
-                <div className="title">
+                <div className="about_title">
                     <div className="head">What is ILLUME?</div>
                     <div className="headImage">
                         <img src={blog} height="450px" width="80%"></img>
@@ -90,7 +97,7 @@ class AboutUs extends React.Component {
                                 <label for="srn"><b>SRN</b></label>
                                 <input type="text" placeholder="Enter SRN" name="sr" />
 
-                                <button type="submit"
+                                <button type="submit" id='submit'
                                     onClick={(event) => { this.onSignUp(event) }}
                                 >SignUp</button>
                             </div>
@@ -109,7 +116,7 @@ class AboutUs extends React.Component {
                         <input type="password" placeholder="Enter Password" name="psw" required
                             onChange={(e) => this.setState({ txtPass: e.target.value })} />
 
-                        <button type="submit"
+                        <button type="submit" id="login"
                             onClick={(event) => { this.onLogIn(event) }}
                         >Login</button>
                     </form>
