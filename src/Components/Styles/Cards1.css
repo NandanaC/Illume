@@ -57,11 +57,7 @@
     text-align: right;
 }
 .blogTitle{
-    font-size: 2.5rem;
-    padding: 0.5rem 0 1rem 0;
-    text-transform: uppercase;
-    color: black;
-    text-align: justify;
+    text-align: left;
 }
 .blogText{
     padding: 10px 0px 10px 15px;
@@ -76,6 +72,7 @@
 }
 .blogReadmore{
     color: white;
+    padding-bottom:20px;
 }
 .blogReadmore button{
     display: inline-block;

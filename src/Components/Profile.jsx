@@ -40,7 +40,6 @@ function Profile(props) {
                                     <span id="drawName"> UserName </span>
                                 </div>
                                 <div className="drawEmail">
-                                    {/*<i id="EmailIcon"><EmailIcon style={{color : 'rgb(62, 182, 182)'}}/></i>*/}
                                     <span id="drawEmail"> {userData.email} </span>
                                 </div>
                             </div>

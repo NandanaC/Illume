@@ -60,12 +60,11 @@ function Header() {
                 <div className="navigation">
                     <button onClick={() => history.push({ pathname: '/home' })} >Home</button>
                     {/*<button><a href="#" className="about">About</a></button>*/}
-                    <button onClick={async () => { await fetchMongoDataOfUser(userData.uid); console.log(myBlogs); onMyBlogs(); }} >
-                        <a className="myblog">My Blogs</a></button>
+                    <button id="myBlog" onClick={async () => { await fetchMongoDataOfUser(userData.uid); console.log(myBlogs); onMyBlogs(); }} >
+                        <a className="myblog" >My Blogs</a></button>
                     <div className="categories">
                         <button className="catButton">Categories</button>
                         <div className="menu" >
-                            {/* TODO:    <button > ML </button> */}
                             <a href={"http://localhost:3000/categories/ml"}> Machine Learning </a>
                             <a href={"http://localhost:3000/categories/cc"}> Cloud Computing </a>
                             <a href={"http://localhost:3000/categories/bd"}> BigData </a>

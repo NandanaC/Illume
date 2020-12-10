@@ -86,16 +86,16 @@ class AboutUs extends React.Component {
                         <form >
                             <div className="container">
                                 <label for="email"><b>Email</b></label>
-                                <input type="email" placeholder="Enter Email" name="em" required
+                                <input type="email" className='about_input' placeholder="Enter Email" name="em" required
                                     onChange={(e) => this.setState({ txtEmail: e.target.value })}
                                 />
 
                                 <label for="psw"><b>Password</b></label>
-                                <input type="password" placeholder="Enter Password" name="psw" required
+                                <input type="password" className ='about_input' placeholder="Enter Password" name="psw" required
                                     onChange={(e) => this.setState({ txtPass: e.target.value })} />
 
                                 <label for="srn"><b>SRN</b></label>
-                                <input type="text" placeholder="Enter SRN" name="sr" />
+                                <input type="text" className='about_input' placeholder="Enter SRN" name="sr" />
 
                                 <button type="submit" id='submit'
                                     onClick={(event) => { this.onSignUp(event) }}
@@ -109,11 +109,11 @@ class AboutUs extends React.Component {
             </div>
                     <form >
                         <label for="email"><b>Email</b></label>
-                        <input type="email" placeholder="Enter Email" name="em" required
+                        <input type="email" className='about_input' placeholder="Enter Email" name="em" required
                             onChange={(e) => this.setState({ txtEmail: e.target.value })} />
 
                         <label for="psw"><b>Password</b></label>
-                        <input type="password" placeholder="Enter Password" name="psw" required
+                        <input type="password" className='about_input' placeholder="Enter Password" name="psw" required
                             onChange={(e) => this.setState({ txtPass: e.target.value })} />
 
                         <button type="submit" id="login"

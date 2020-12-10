@@ -8,6 +8,7 @@ import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormGroup from "@material-ui/core/FormGroup";
+import PersonIcon from "@material-ui/icons/Person";
 
 function Display(props) {
     const dispStyles = makeStyles((theme) => ({
@@ -38,7 +39,7 @@ function Display(props) {
                     <div className="dispTitle">{props.blog.title}</div>
                     <div className="dispAvatar">
                         <div className={classes.root}>
-                            <Avatar className={classes.teal}>N</Avatar>
+                            <Avatar className={classes.teal}> <PersonIcon /> </Avatar>
                         </div>
                         <div className="userName">
                             <span>

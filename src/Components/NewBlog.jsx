@@ -114,7 +114,7 @@ function NewBlog(props) {
                                 <MenuItem value="">
                                     <em>None</em>
                                 </MenuItem>
-                                <MenuItem value={10}> Machine Learning</MenuItem>
+                                <MenuItem value={10}>Machine Learning</MenuItem>
                                 <MenuItem value={20}>Cloud Computing</MenuItem>
                                 <MenuItem value={30}>BigData</MenuItem>
                                 <MenuItem value={40}>Web development</MenuItem>
@@ -131,7 +131,7 @@ function NewBlog(props) {
                         </div>
 
                         <div className="urbutton">
-                            <button type="button" id="upload" onClick={() => { setOpenDialog(true); updateDatabase(data); }}>Upload</button>
+                            <button type="button" id="upload" onClick={() => { setTimeout(setOpenDialog(true), 1500); updateDatabase(data); }}>Upload</button>
                             <button type="reset" id="reset">Reset</button>
                         </div>
                     </form>
